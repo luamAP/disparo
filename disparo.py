@@ -32,7 +32,7 @@ def send_message():
 
         response = requests.post(WHATSAPP_API_URL, headers=headers, json=data)
 
-        return {"status": response.status_code, "response": response.json()}
+    return {"status": response.status_code, "response": response.json()}
 
 if __name__ == '__main__':
 
