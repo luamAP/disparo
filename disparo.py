@@ -9,26 +9,30 @@ ACCESS_TOKEN = "EAALuCkcVXeQBO5sAxZA49TXI10z8oME42ZCZCNYZA2H3ERISmTvArkYEgSAbUp8
 @app.route('/', methods=['GET'])
 def send_message():
     text = request.args.get('text')
-    numero = request.args.get('numero')
+    # numero = request.args.get('numero')
 
-    # Configuração da requisição para a API do WhatsApp
-    headers = {
-        "Authorization": f"Bearer {ACCESS_TOKEN}",
-        "Content-Type": "application/json"
-    }
+    # if not numero:
 
-    data = {
-        "messaging_product": "whatsapp",
-        "to": numero,
-        "type": "text",
-        "text": {
-            "body": text
+    for numero in ['5592982411933', '5592993356810']:
+
+        # Configuração da requisição para a API do WhatsApp
+        headers = {
+            "Authorization": f"Bearer {ACCESS_TOKEN}",
+            "Content-Type": "application/json"
         }
-    }
 
-    response = requests.post(WHATSAPP_API_URL, headers=headers, json=data)
+        data = {
+            "messaging_product": "whatsapp",
+            "to": numero,
+            "type": "text",
+            "text": {
+                "body": text
+            }
+        }
 
-    return {"status": response.status_code, "response": response.json()}
+        response = requests.post(WHATSAPP_API_URL, headers=headers, json=data)
+
+        return {"status": response.status_code, "response": response.json()}
 
 if __name__ == '__main__':
 
