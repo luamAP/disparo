@@ -14,7 +14,7 @@ def send_message():
     # if not numero:
 
     respostas = []
-    for numero in ['5592982411933', '5592993356810', '5592982671304']:
+    for numero in ['5592993356810', '5592991151990','5592982411933', '5592982671304']:
 
         # Configuração da requisição para a API do WhatsApp
         headers = {
