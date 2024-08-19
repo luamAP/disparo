@@ -3,6 +3,7 @@ import requests
 
 app = Flask(__name__)
 
+NUMEROS = ['5592993356810', '5592991151990','5592982411933', '5592982671304']
 WHATSAPP_API_URL = "https://graph.facebook.com/v20.0/382357811621980/messages"
 ACCESS_TOKEN = "EAALuCkcVXeQBO5sAxZA49TXI10z8oME42ZCZCNYZA2H3ERISmTvArkYEgSAbUp82ODSrQf1j2AZAGOeOgW93TMAysrbVtXloL5w3GcqCYwcOCvTsrogqGlNtJhueNJkuZC58ZBtak4ratfHQz8jZAFsNKEb8z3TGxqppg1tYfPX6SQYfHEPqgUnZCFjhrgIMsZBPdxsAZDZD"
 
@@ -14,7 +15,7 @@ def send_message():
     # if not numero:
 
     respostas = []
-    for numero in ['5592993356810', '5592991151990','5592982411933', '5592982671304']:
+    for numero in NUMEROS:
 
         # Configuração da requisição para a API do WhatsApp
         headers = {
