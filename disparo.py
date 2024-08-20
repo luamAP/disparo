@@ -5,6 +5,7 @@ import datetime
 from threading import Thread
 
 filename = (__file__.split('\\')[-1]).split('.')[0]
+print(filename)
 app = Flask(__name__)
 
 NUMEROS = ['5592993356810','5592982411933', '5592982671304', '5592999029558', '5592992560618']
@@ -44,16 +45,16 @@ def start_app():
 def print_terminal():
     while True:
         print(f"+ + + + + + + + + Executando em {datetime.datetime.now()} + + + + + + + + +")
-        time.sleep(60*2)
+        time.sleep(60*5)
 
 def deadpool():
     while True:
         try:
             # Faz uma requisição para a própria aplicação
-            requests.get(f"https://{filename}.onrender.com/")
+            requests.get(f"https://disparo.onrender.com/")
         except requests.exceptions.RequestException as e:
             print(f"Erro ao tentar manter vivo: {e}")
-        time.sleep(60*2)  # Espera 2 minutos
+        time.sleep(60*5)  # Espera 5 minutos
 
 
 if __name__ == '__main__':
